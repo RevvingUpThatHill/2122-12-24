@@ -15,6 +15,25 @@ Docker run (the image that was pulled from "Dockerhub" as a new Docker container
 -p opening a port
 -it (opens an interactive terminal when ran)
 -d (run in background)
+# Docker commands
+To set an env variable on linux:
+export varname=variable
+To view the current value of an env variable:
+echo ${variablename}
+To view all containers (stopped and running)
+docker ps -a
+To build a container with a tag
+docker build . -t name
+To run my API container:
+docker run -e demo_db_url=${demo_db_url} -e demo_db_username=${demo_db_username} -e demo_db_password=${demo_db_password} -p 8080:8080 -d flightapi
+To kill a running container:
+docker kill containername
+To view container logs:
+docker logs containername
+To remove a stopped container
+docker rm
+To remove unused containers
+docker container prune
 # Dockerization
 Ideally, we should be running our applications (such as our frontend or backend server)
 inside of a Docker container. We can create a custom Docker image that contains all the
